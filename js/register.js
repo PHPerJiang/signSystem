@@ -41,11 +41,11 @@ $(document).ready(function(){
         if(userFlag&&pwdFlag){
             //对接代码开始
                 //请填写用户注册对接代码
-        	var url='../doAction/register.php';
+        	var url='index.php?c=register&m=checkRegister';
         	var data={"username":userNam,"password":password};
         	var success=function(res){
         		if(res.status==1){
-        			window.location.href="index.php?c=index&m=index";
+        			window.location.href="index.php?c=index&m=_index";
         		};
         	}
         	$.ajax({

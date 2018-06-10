@@ -36,7 +36,7 @@ $(document).ready(function(){
         	});
         //对接代码结束
         if(signal){//如果登录成功
-            window.location.href="index.php?c=index&m=index";
+            window.location.href="index.php?c=index&m=_index";
         }
         else{//如果登录失败
             $('#hint').html("用户名或密码错误，请重新登录");
