@@ -31,12 +31,13 @@ class Attendance{
         date_default_timezone_set('PRC');
         //单例模式连接数据库
         $pdo=Db::getInstance();
-        $sql='insert into worktime value(null,:userid,:username,:start,:end)';
+        $sql='insert into worktime value(null,:userid,:username,:start,:end,:worktime)';
         $arr=[
             'userid'=>$userInfo['userid'],
             'username'=>$userInfo['username'],
             'start'=>(time()-$times),
             'end'=>time(),
+            'worktime'=>$times,
         ];
         $stmt=$pdo->prepare($sql);
         $stmt->execute($arr);

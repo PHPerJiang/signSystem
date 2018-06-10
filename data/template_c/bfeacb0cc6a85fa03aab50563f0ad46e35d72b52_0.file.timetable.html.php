@@ -1,4 +1,28 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.32, created on 2018-06-10 21:32:23
+  from 'D:\WAMPServer\Demo\signSystem\html\timetable.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5b1d2867b3c861_45547966',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'bfeacb0cc6a85fa03aab50563f0ad46e35d72b52' => 
+    array (
+      0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\timetable.html',
+      1 => 1528637542,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5b1d2867b3c861_45547966 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'D:\\WAMPServer\\Demo\\signSystem\\workspace\\libs\\plugins\\modifier.date_format.php','function'=>'smarty_modifier_date_format',),));
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="author" content="张乃璎">
@@ -14,13 +38,27 @@
     <link rel="stylesheet" href="css/drop-down.css" type="text/css"/>
     <link rel="stylesheet" href="css/pages.css" media="screen" type="text/css" />
 
-    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
-    <script type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
-    <script src="js/timetable.js" type="text/javascript"></script>
-    <script src="js/jquery-ui.min.js" type="text/javascript"></script>
-    <script src="js/select-widget-min.js" type="text/javascript"></script>
+    <?php echo '<script'; ?>
+ src="js/jquery-3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="js/bootstrap-datetimepicker.js" charset="UTF-8"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ type="text/javascript" src="js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/timetable.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/jquery-ui.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/select-widget-min.js" type="text/javascript"><?php echo '</script'; ?>
+>
     <title>时间表</title>
 </head>
 <body>
@@ -69,15 +107,27 @@
                 <td>签退</td>
                 <td>学习时间（分钟）</td>
             </tr>
-           {foreach $timelist as $key=>$value}
+           <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['timelist']->value, 'value', false, 'key');
+if ($_from !== null) {
+foreach ($_from as $_smarty_tpl->tpl_vars['key']->value => $_smarty_tpl->tpl_vars['value']->value) {
+?>
             <tr class="fontSize">
-                <td>{$value.id}</td>
-                <td>{$value.username}</td>
-                <td>{$value.start|date_format:'%Y-%m-%d %H:%M:%S'}</td>
-                <td>{$value.end|date_format:'%Y-%m-%d %H:%M:%S'}</td>
-                <td>{(($value.end-$value.start)/60)|ceil}</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['value']->value['id'];?>
+</td>
+                <td><?php echo $_smarty_tpl->tpl_vars['value']->value['username'];?>
+</td>
+                <td><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['value']->value['start'],'%Y-%m-%d %H:%M:%S');?>
+</td>
+                <td><?php echo smarty_modifier_date_format($_smarty_tpl->tpl_vars['value']->value['end'],'%Y-%m-%d %H:%M:%S');?>
+</td>
+                <td><?php echo ceil((($_smarty_tpl->tpl_vars['value']->value['end']-$_smarty_tpl->tpl_vars['value']->value['start'])/60));?>
+</td>
             </tr>
-           {/foreach}
+           <?php
+}
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </table>
     </div><!--.tableDiv end-->
     <!-- <div class="container xsmall">
@@ -114,4 +164,5 @@
     </div> --><!--.tableDiv end-->
 </div><!--.content end-->
 </body>
-</html>
+</html><?php }
+}

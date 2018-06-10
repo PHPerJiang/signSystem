@@ -43,4 +43,8 @@ class Login{
             show(0,'','fail');
         }
     }
+    //ÍË³öµÇÂ¼
+    public function logout(){
+       session_destroy();
+    }
 }

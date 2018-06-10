@@ -9,7 +9,12 @@ $(document).ready(function(){
         jQuery("#jquery-accordion-menu").jqueryAccordionMenu();
 
     });
-
+    $(function(){
+    	$(".exitHead").click(function(){
+    		window.location.href="index.php?c=login&m=index";
+    		$.get('index.php?c=login&m=logout');
+    	});
+    });
     $(function(){
         //顶部导航切换
         $("#demo-list li").click(function(){
@@ -57,11 +62,11 @@ $(document).ready(function(){
         $('#position').html("签到");
     });
     $('#timetable').click(function(){
-        $('#subFrame').attr("src",'timetable.html');
+        $('#subFrame').attr("src",'index.php?c=timetable&m=index');
         $('#position').html("时间表");
     });
     $('#totaltime').click(function(){
-        $('#subFrame').attr("src",'totaltime.html');
+        $('#subFrame').attr("src",'index.php?c=totaltime&m=index');
         $('#position').html("总时间");
     });
     $('#viewcompetition').click(function(){
