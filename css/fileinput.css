@@ -1,0 +1,45 @@
+/*
+    @name:fileinput.css
+    @description:设置上传文件按钮的样式
+    @author:张乃璎 fnine59@163.com
+*/
+body {
+    font-size: 14px;
+}
+
+input {
+    vertical-align: middle;
+    margin: 0;
+    padding: 0
+}
+
+.file-box {
+    position: relative;
+    width: 340px;
+    display: inline-block;
+}
+
+.txt {
+    height: 35px;
+    border: 1px solid #cdcdcd;
+    width: 180px;
+    border-radius: 5px;
+}
+
+.selfbtn{
+    background-color: #FFF;
+    border: 1px solid #CDCDCD;
+    height: 35px;
+    width: 70px;
+    cursor: pointer;
+}
+
+.file {
+    position: absolute;
+    top: 0;
+    right: 80px;
+    height: 35px;
+    filter: alpha(opacity:0);
+    opacity: 0;
+    width: 260px
+}

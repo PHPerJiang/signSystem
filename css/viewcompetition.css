@@ -1,0 +1,11 @@
+/*
+    @name:viewcompetition.css
+    @require:viewcompetition.html
+    @description:竞赛信息页面样式表
+    @author:张乃璎 fnine59@163.com
+*/
+.tableDiv{
+    width: 90%;
+    margin: 1% 0% 0% 5%;
+    padding: 0px;
+}

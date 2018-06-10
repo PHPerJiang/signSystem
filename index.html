@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="author" content="张乃璎">
+    <meta name="generator" content="Webstorm 10.0.4">
+    <meta name="description" content="首页">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet" type="text/css">
+    <link href="css/base.css" rel="stylesheet" type="text/css">
+    <link href="css/jquery-accordion-menu.css" rel="stylesheet" type="text/css"/>
+    <link href="css/font-awesome.css" rel="stylesheet" type="text/css" />
+    <link href="css/index.css" rel="stylesheet" type="text/css">
+
+    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="js/jquery-accordion-menu.js" type="text/javascript"></script>
+    <script src="js/index.js" type="text/javascript"></script>
+    <title>首页</title>
+</head>
+<body>
+<div class="content">
+    <div class="navDiv">
+        <div class="contenter">
+            <div id="jquery-accordion-menu" class="jquery-accordion-menu black">
+                <div class="jquery-accordion-menu-header" style="height: 150px;">
+                    <h3 class="boldFontFormat">创新实验室</h3>
+                    <h6>竞赛信息记录及签到系统</h6>
+                </div>
+                <ul id="demo-list">
+                    <li><a href="#"><i class="fa fa-user"></i>出勤 </a>
+                        <ul class="submenu">
+                            <li><a href="#" id="attendance">签到</a></li>
+                            <li><a href="#" id="timetable">时间表</a></li>
+                            <li><a href="#" id="totaltime">总时间</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"><i class="fa fa-suitcase"></i>竞赛 </a>
+                        <ul class="submenu">
+                            <li><a href="#" id="viewcompetition">竞赛信息</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="jquery-accordion-menu-footer" style="height: 150px;">
+                </div>
+            </div><!--#jquery-accordion-menu end-->
+        </div><!--.contenter end-->
+    </div><!--.navDiv end-->
+    <div class="head">
+        <p class="userHead textAlignRight fontFormat">Welcome,UserName.<span class="exitHead boldFontFormat fontColorBlue">[退出]</span></p>
+    </div><!--.head end-->
+    <div class="position">
+        <p class="positionHead smallFontSize">当前位置：<span id="position"></span></p>
+    </div><!--.position end-->
+    <div class="iframe">
+        <div class="iframeContent">
+            <iframe name="content" src="" width="100%" height="116%" scrolling="no" frameborder="0" id="subFrame"></iframe>
+        </div>
+    </div>
+</div><!--.content end-->
+</body>
+</html>

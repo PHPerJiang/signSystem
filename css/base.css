@@ -1,0 +1,69 @@
+/*
+    @name:base.css
+    @description:所有页面通用样式
+    @author:张乃璎 fnine59@163.com
+*/
+*{
+    /*清除浏览器自带样式*/
+    margin: 0px;
+    padding: 0px;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+button{
+    outline: none;
+}
+.reset{
+    /*清除button,input框样式*/
+    background: none;
+    border: none;
+    padding: 0px;
+    margin: 0px;
+}
+.content{
+    width: 100%;
+    height: 100%;
+}
+.fontSize{
+    font-size: 16px;
+}
+.smallFontSize{
+    font-size: 14px;
+}
+.fontFormat{
+    font-family: 微软雅黑;
+    font-weight: lighter;
+}
+.boldFontFormat{
+    font-family: 微软雅黑;
+    font-weight: bold;
+}
+.fontColorWhite{
+    color: white;
+}
+.fontColorBlue{
+    color: rgba(24, 202, 255, 1);
+}
+.fontColorLightGray{
+    color: gray;
+}
+.inlineDisplay{
+    display: inline-block;
+}
+.undisplay{
+    display: none;
+}
+.display{
+    display: block;
+}
+.textAlignCenter{
+    text-align: center;
+}
+.textAlignLeft{
+    text-align: left;
+}
+.textAlignRight{
+    text-align: right;
+}

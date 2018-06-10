@@ -1,0 +1,29 @@
+/*
+    @name:timetable.css
+    @require:timetable.html
+    @description:时间表页面样式
+    @author:张乃璎 fnine59@163.com
+*/
+.query{
+
+}
+.text{
+    float: left;
+    margin: 2% 2% 0% 2%;
+}
+.singalTime{
+    width: 23%;
+}
+.querySelect{
+    width: 19%;
+    float: right;
+    margin-right: 1%;
+}
+.queryButton{
+    float: right;
+    margin-right: 10%;
+}
+.tableDiv{
+    width: 80%;
+    margin: 1% 0% 0% 10%;
+}
