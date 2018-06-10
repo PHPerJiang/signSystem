@@ -30,7 +30,22 @@ window.onload = function() {
             interval = null;
             this.innerHTML = "开始计时";
             //在这里由oT.value获取到暂停时的时间
-            alert(oT.value);
+            //alert(oT.value);
+            var url='./doAction/attendance.php';
+            var data={"end":oT.value};
+            var success=function(res){
+            	if(res.status==1){
+            		alert('打卡成功');
+            	}
+            }
+            $.ajax({
+            	url:url,
+            	data:data,
+            	success:success,
+            	dataType:'json',
+            	type:'post'
+            });
+           
         }
     }
 }

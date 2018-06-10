@@ -41,6 +41,20 @@ $(document).ready(function(){
         if(userFlag&&pwdFlag){
             //对接代码开始
                 //请填写用户注册对接代码
+        	var url='../doAction/register.php';
+        	var data={"username":userNam,"password":password};
+        	var success=function(res){
+        		if(res.status==1){
+        			window.location.href="index.php?c=index&m=index";
+        		};
+        	}
+        	$.ajax({
+        		url:url,
+        		data:data,
+        		success:success,
+        		dataType:'json',
+        		type:'post',
+        	});
             //对接代码结束
         }
         else if(!userFlag){
@@ -55,6 +69,6 @@ $(document).ready(function(){
     });
     $('#login').click(function(){
         //点击登录按钮时的操作
-        window.location.href="login.html";
+        window.location.href="index.php?c=login&m=index";
     });
 });

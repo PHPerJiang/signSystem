@@ -16,13 +16,27 @@ $(document).ready(function(){
         var userNam = $('#userName').val();//获取用户输入的用户名
         var password = $('#password').val();//获取用户输入的密码
         var signal=0;//记录用户是否登陆成功，如果登陆成功则将这个变量设为1
-
         //对接代码开始
             //请填写对接代码
+        	var url='index.php?c=Login&m=checkLogin';
+        	var data={"userNam":userNam,"password":password};
+        	var success=function(res){
+        		if(res.status==1){
+        			var local_signal=1;
+        			signal=local_signal;
+        		}
+        	}
+        	$.ajax({
+        		url:url,
+        		data:data,
+        		async:false,
+        		success:success,
+        		dataType:'json',
+        		type:'post'
+        	});
         //对接代码结束
-
         if(signal){//如果登录成功
-            window.location.href="index.html";
+            window.location.href="index.php?c=index&m=index";
         }
         else{//如果登录失败
             $('#hint').html("用户名或密码错误，请重新登录");
@@ -30,6 +44,6 @@ $(document).ready(function(){
     });
     $('#register').click(function(){
         //点击注册按钮时的操作
-        window.location.href="register.html";
+        window.location.href="index.php?c=register&m=index";
     });
 });
