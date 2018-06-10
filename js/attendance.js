@@ -31,8 +31,8 @@ window.onload = function() {
             this.innerHTML = "开始计时";
             //在这里由oT.value获取到暂停时的时间
             //alert(oT.value);
-            var url='./doAction/attendance.php';
-            var data={"end":oT.value};
+            var url='index.php?c=attendance&m=save';
+            var data={"worktime":oT.value};
             var success=function(res){
             	if(res.status==1){
             		alert('打卡成功');

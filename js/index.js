@@ -53,7 +53,7 @@ $(document).ready(function(){
     })(jQuery);
 
     $('#attendance').click(function(){
-        $('#subFrame').attr("src",'attendance.html');
+        $('#subFrame').attr("src",'index.php?c=attendance&m=index');
         $('#position').html("签到");
     });
     $('#timetable').click(function(){
