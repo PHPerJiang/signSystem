@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-10 21:10:25
+/* Smarty version 3.1.32, created on 2018-06-11 11:32:35
   from 'D:\WAMPServer\Demo\signSystem\html\index.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b1d23410ee586_42171580',
+  'unifunc' => 'content_5b1ded530e9154_53685195',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1c81499cc5f86b2a7b531bb3b80f63f0d2cd1fd' => 
     array (
       0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\index.html',
-      1 => 1528615297,
+      1 => 1528687952,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b1d23410ee586_42171580 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b1ded530e9154_53685195 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -79,7 +79,8 @@ function content_5b1d23410ee586_42171580 (Smarty_Internal_Template $_smarty_tpl)
         </div><!--.contenter end-->
     </div><!--.navDiv end-->
     <div class="head">
-        <p class="userHead textAlignRight fontFormat">Welcome,UserName.<span class="exitHead boldFontFormat fontColorBlue">[退出]</span></p>
+        <p class="userHead textAlignRight fontFormat">Welcome,<?php echo $_smarty_tpl->tpl_vars['username']->value;?>
+.<span class="exitHead boldFontFormat fontColorBlue">[退出]</span></p>
     </div><!--.head end-->
     <div class="position">
         <p class="positionHead smallFontSize">当前位置：<span id="position"></span></p>

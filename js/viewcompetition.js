@@ -6,6 +6,6 @@
 */
 $(document).ready(function(){
     $('#addcompetition').click(function(){
-        window.location.href="addcompetition.html";
+        window.location.href="index.php?c=competition&m=add";
     });
 });

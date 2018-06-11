@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-10 22:27:08
+/* Smarty version 3.1.32, created on 2018-06-11 11:15:55
   from 'D:\WAMPServer\Demo\signSystem\html\login.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b1d353c6f1e21_53438860',
+  'unifunc' => 'content_5b1de96b688356_82152326',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b1d353c6f1e21_53438860 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b1de96b688356_82152326 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>

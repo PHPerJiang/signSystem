@@ -13,6 +13,7 @@ class Index{
         if(!$_SESSION['userInfo']){
             header('location:index.php?c=login&m=index');
         }
+        View::assign(array('username'=>$_SESSION['userInfo']['username']));
         View::display('index.html');
     }
 }

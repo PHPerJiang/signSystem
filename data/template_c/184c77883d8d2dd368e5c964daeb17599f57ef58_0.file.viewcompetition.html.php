@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<?php
+/* Smarty version 3.1.32, created on 2018-06-11 11:16:03
+  from 'D:\WAMPServer\Demo\signSystem\html\viewcompetition.html' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.32',
+  'unifunc' => 'content_5b1de973c25e29_01940849',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '184c77883d8d2dd368e5c964daeb17599f57ef58' => 
+    array (
+      0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\viewcompetition.html',
+      1 => 1528680662,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_5b1de973c25e29_01940849 (Smarty_Internal_Template $_smarty_tpl) {
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta name="author" content="张乃璎">
@@ -12,9 +35,15 @@
     <link href="css/viewcompetition.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/pages.css" media="screen" type="text/css" />
 
-    <script src="js/jquery-3.2.1.min.js" type="text/javascript"></script>
-    <script src="js/bootstrap.min.js" type="text/javascript"></script>
-    <script src="js/viewcompetition.js" type="text/javascript"></script>
+    <?php echo '<script'; ?>
+ src="js/jquery-3.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+    <?php echo '<script'; ?>
+ src="js/viewcompetition.js" type="text/javascript"><?php echo '</script'; ?>
+>
     <title>竞赛信息</title>
 </head>
 <body>
@@ -99,4 +128,5 @@
     </div> --><!--.container end-->
 </div>
 </body>
-</html>
+</html><?php }
+}

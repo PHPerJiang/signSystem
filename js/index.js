@@ -70,7 +70,7 @@ $(document).ready(function(){
         $('#position').html("总时间");
     });
     $('#viewcompetition').click(function(){
-        $('#subFrame').attr("src",'viewcompetition.html');
+        $('#subFrame').attr("src",'index.php?c=competition&m=view');
         $('#position').html("竞赛信息");
     });
 
