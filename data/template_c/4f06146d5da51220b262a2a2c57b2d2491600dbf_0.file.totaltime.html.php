@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-10 22:46:23
+/* Smarty version 3.1.32, created on 2018-06-11 09:21:03
   from 'D:\WAMPServer\Demo\signSystem\html\totaltime.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b1d39bf7e5d65_39986253',
+  'unifunc' => 'content_5b1dce7f2dbe01_94699140',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4f06146d5da51220b262a2a2c57b2d2491600dbf' => 
     array (
       0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\totaltime.html',
-      1 => 1528641976,
+      1 => 1528680061,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b1d39bf7e5d65_39986253 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b1dce7f2dbe01_94699140 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,27 +48,27 @@ function content_5b1d39bf7e5d65_39986253 (Smarty_Internal_Template $_smarty_tpl)
 <?php echo '<script'; ?>
  language="JavaScript">
     $(document).ready(function() {
-    	var name=[];
-    	var time=[];
         var chart = {
             type: 'bar'
         };
+        var usernames=[];
+        var usertimes=[];
         var url='index.php?c=totaltime&m=total';
         var data={};
         var success=function(res){
+        	var names=[];
+    		var times=[];
     		if(res.status==1){
-        		/* alert(1); */
-        		var datas=res.data;
-        		var name1=time1=[];
-        		for(var i = 0;datas.length;i++){
-        			name1[i]=datas[i]['username'];
-        		}
-        		alert(name1);
-        		/* alert(name[i]);
-            	alert(time[i]); */
+        		var userdata=res.data;
+    			for(var i=0 ;i<userdata.length; i++){
+    				names[i] = userdata[i]['username'];
+    				times[i] = Number(Math.floor(userdata[i]['time']/3600));
+    			}
         	  }
+    		usernames=names;
+    		usertimes=times;
     		};
-    	
+    		
         $.ajax({
         	url:url,
         	data:data,
@@ -94,7 +94,7 @@ function content_5b1d39bf7e5d65_39986253 (Smarty_Internal_Template $_smarty_tpl)
             }
         };
         var xAxis = {
-            categories: ['张三', '李四', '王五', '赵六'],
+            categories:usernames,
             title: {
                 text: null
             },
@@ -136,12 +136,10 @@ function content_5b1d39bf7e5d65_39986253 (Smarty_Internal_Template $_smarty_tpl)
         var credits = {
             enabled: false
         };
-
         var series= [{
             name: 'time',
-            data: [973, 914, 4054, 732],
+            data:usertimes,
         }];
-
         var json = {};
         json.chart = chart;
         json.title = title;

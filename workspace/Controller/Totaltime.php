@@ -13,7 +13,7 @@ class Totaltime{
     public function total(){
         //单例模式连接数据库
         $pdo=Db::getInstance();
-        $sql='select username,count(worktime)as time from worktime group by username order by time desc';
+        $sql='select username,sum(worktime) as time from worktime group by username order by time desc';
         $stmt=$pdo->prepare($sql);
         $stmt->execute();
         $res=$stmt->fetchAll(PDO::FETCH_ASSOC);

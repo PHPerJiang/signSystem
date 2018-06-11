@@ -18,27 +18,27 @@
 <div id="container" style="width: 550px; height: 400px; margin: 0 auto"></div>
 <script language="JavaScript">
     $(document).ready(function() {
-    	var name=[];
-    	var time=[];
         var chart = {
             type: 'bar'
         };
+        var usernames=[];
+        var usertimes=[];
         var url='index.php?c=totaltime&m=total';
         var data={};
         var success=function(res){
+        	var names=[];
+    		var times=[];
     		if(res.status==1){
-        		/* alert(1); */
-        		var datas=res.data;
-        		var name1=time1=[];
-        		for(var i = 0;datas.length;i++){
-        			name1[i]=datas[i]['username'];
-        		}
-        		alert(name1);
-        		/* alert(name[i]);
-            	alert(time[i]); */
+        		var userdata=res.data;
+    			for(var i=0 ;i<userdata.length; i++){
+    				names[i] = userdata[i]['username'];
+    				times[i] = Number(Math.floor(userdata[i]['time']/3600));
+    			}
         	  }
+    		usernames=names;
+    		usertimes=times;
     		};
-    	
+    		
         $.ajax({
         	url:url,
         	data:data,
@@ -64,7 +64,7 @@
             }
         };
         var xAxis = {
-            categories: ['张三', '李四', '王五', '赵六'],
+            categories:usernames,
             title: {
                 text: null
             },
@@ -106,12 +106,10 @@
         var credits = {
             enabled: false
         };
-
         var series= [{
             name: 'time',
-            data: [973, 914, 4054, 732],
+            data:usertimes,
         }];
-
         var json = {};
         json.chart = chart;
         json.title = title;
