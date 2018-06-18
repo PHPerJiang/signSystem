@@ -58,3 +58,5 @@ $(document).ready(function(){
     });
     //设置select结束
 });
+
+	//上传文件

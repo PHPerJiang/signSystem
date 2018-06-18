@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-12 19:41:32
+/* Smarty version 3.1.32, created on 2018-06-18 21:43:42
   from 'D:\WAMPServer\Demo\signSystem\html\addcompetition.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b1fb16c230593_03232388',
+  'unifunc' => 'content_5b27b70e3a1a24_38634963',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a35eb6e62680f2b5fff0731c03d22c4ba9c2ef17' => 
     array (
       0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\addcompetition.html',
-      1 => 1528803242,
+      1 => 1529329161,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b27b70e3a1a24_38634963 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +69,7 @@ function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl)
 </head>
 <body>
 <div class="content">
+	<form action="index.php?c=Competition&m=save" method="post" enctype="multipart/form-data">
     <div class="title textAlignCenter">
         <h1 class="boldFontFormat">添加竞赛信息</h1>
         <h4>Add Competition Informations</h4>
@@ -78,7 +79,7 @@ function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl)
             <tr>
                 <th class="fontSize boldFontFormat">赛事名称</th>
                 <td>
-                    <input class="form-control inputFormat">
+                    <input class="form-control inputFormat" name="competitionName">
                 </td>
             </tr>
             <tr>
@@ -89,26 +90,26 @@ function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl)
                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
                         <span class="input-group-addon"><span class="glyphicon glyphicon-th"></span></span>
                     </div>
-                    <input type="hidden" id="dtp_input1" value=""/><br/>
+                    <input type="hidden" id="dtp_input1" value="" name="competitionTime"/><br/>
                 </td>
             </tr>
             <tr>
                 <th class="fontSize boldFontFormat">队伍名称</th>
                 <td>
-                    <input class="form-control inputFormat">
+                    <input class="form-control inputFormat" name="competitionTeam">
                 </td>
-                <td><input type="checkbox" value="">是否单人赛</td>
+                <td><input type="checkbox" value="1" name="checkTeam">是否单人赛</td>
             </tr>
             <tr>
                 <th class="fontSize boldFontFormat">题目</th>
                 <td>
-                    <input class="form-control inputFormat">
+                    <input class="form-control inputFormat" name="title">
                 </td>
             </tr>
             <tr>
                 <th class="fontSize boldFontFormat">赛事等级</th>
                 <td>
-                    <select name="drop2" class="ui-select">
+                    <select  class="ui-select" name="grade">
                         <option value="">请选择</option>
                         <option value="校级">校级</option>
                         <option value="省级">省级</option>
@@ -119,57 +120,15 @@ function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl)
             <tr>
                 <th class="fontSize boldFontFormat">名次</th>
                 <td>
-                    <select name="drop2" class="ui-select">
+                    <select class="ui-select" name="top">
                         <option value="">请选择</option>
-                        <option>特等奖</option>
-                        <option>一等奖</option>
-                        <option>二等奖</option>
-                        <option>三等奖</option>
-                        <option>优秀奖</option>
-                        <option>提名</option>
+                        <option value="特等奖">特等奖</option>
+                        <option value="一等奖">一等奖</option>
+                        <option value="二等奖">二等奖</option>
+                        <option value="三等奖">三等奖</option>
+                        <option value="优秀奖">优秀奖</option>
+                        <option value="提名奖">提名奖</option>
                     </select>
-                </td>
-            </tr>
-            <tr>
-                <th class="fontSize boldFontFormat">附件</th>
-                <td class="textAlignLeft">
-                    <span class="fontSize">申报书　　</span>
-                    <div class="file-box">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type='text' name='textfield' id='textfield' class='txt' disabled="true" />
-                            <input type='button' class='selfbtn' value='浏览...' />
-                            <input type="file" name="fileField" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                            <input type="submit" name="submit" class="selfbtn" value="上传" />
-                        </form>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th class="fontSize boldFontFormat"></th>
-                <td class="textAlignLeft">
-                    <span class="fontSize">论　文　　</span>
-                    <div class="file-box">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type='text' name='textfield' class='txt' disabled="true" />
-                            <input type='button' class='selfbtn' value='浏览...' />
-                            <input type="file" name="fileField" class="file" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                            <input type="submit" name="submit" class="selfbtn" value="上传" />
-                        </form>
-                    </div>
-                </td>
-            </tr>
-            <tr>
-                <th class="fontSize boldFontFormat"></th>
-                <td class="textAlignLeft">
-                    <span class="fontSize">PPT　　　</span>
-                    <div class="file-box">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type='text' name='textfield' class='txt' disabled="true" />
-                            <input type='button' class='selfbtn' value='浏览...' />
-                            <input type="file" name="fileField" class="file" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                            <input type="submit" name="submit" class="selfbtn" value="上传" />
-                        </form>
-                    </div>
                 </td>
             </tr>
             <tr>
@@ -177,18 +136,17 @@ function content_5b1fb16c230593_03232388 (Smarty_Internal_Template $_smarty_tpl)
                 <td class="textAlignLeft">
                     <span class="fontSize">证　书　　</span>
                     <div class="file-box">
-                        <form action="" method="post" enctype="multipart/form-data">
-                            <input type='text' name='textfield' class='txt' disabled="true" />
+                            <input type='text' id='textfield' class='txt' disabled="true" />
                             <input type='button' class='selfbtn' value='浏览...' />
-                            <input type="file" name="fileField" class="file" size="28" onchange="document.getElementById('textfield').value=this.value" />
-                            <input type="submit" name="submit" class="selfbtn" value="上传" />
-                        </form>
+                            <input type="file" name="fileField[]" class="file" size="28" onchange="document.getElementById('textfield').value=this.value" />
+                           <!--  <input type="submit" name="submit" class="selfbtn" value="上传" /> -->
                     </div>
                 </td>
             </tr>
         </table>
         <button class="btn btn-default">提交竞赛信息</button>
-    </div><!--.formDiv end-->
+   	</div><!--.formDiv end-->
+	</form>
 </div><!--.content end-->
 </body>
 </html><?php }
