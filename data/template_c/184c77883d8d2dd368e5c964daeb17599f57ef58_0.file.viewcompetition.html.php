@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.32, created on 2018-06-11 11:16:03
+/* Smarty version 3.1.32, created on 2018-06-19 17:18:10
   from 'D:\WAMPServer\Demo\signSystem\html\viewcompetition.html' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.32',
-  'unifunc' => 'content_5b1de973c25e29_01940849',
+  'unifunc' => 'content_5b28ca5236bfe9_11750367',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '184c77883d8d2dd368e5c964daeb17599f57ef58' => 
     array (
       0 => 'D:\\WAMPServer\\Demo\\signSystem\\html\\viewcompetition.html',
-      1 => 1528680662,
+      1 => 1529399887,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_5b1de973c25e29_01940849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5b28ca5236bfe9_11750367 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,12 +62,8 @@ function content_5b1de973c25e29_01940849 (Smarty_Internal_Template $_smarty_tpl)
                 <td>题　　目</td>
                 <td>赛事等级</td>
                 <td>名　　次</td>
-                <td>申报书</td>
-                <td>论　　文</td>
-                <td>PPT</td>
                 <td>证　　书</td>
-                <td>编　　辑</td>
-                <td>修　　改</td>
+                <td>操　　作</td>
             </tr>
             <tr class="fontSize">
                 <td>赛事名称</td>
@@ -76,39 +72,7 @@ function content_5b1de973c25e29_01940849 (Smarty_Internal_Template $_smarty_tpl)
                 <td>题　　目</td>
                 <td>赛事等级</td>
                 <td>名　　次</td>
-                <td><a href="" download="">下载申报书</a></td>
-                <td><a href="" download="">下载论文</a></td>
-                <td><a href="" download="">下载PPT</a></td>
                 <td><a href="" download="">下载证书</a></td>
-                <td><button class="btn btn-default">编辑</button></td>
-                <td><button class="btn btn-default">删除</button></td>
-            </tr>
-            <tr class="fontSize">
-                <td>赛事名称</td>
-                <td>2017-05-02<br>15:34:15</td>
-                <td>队伍名称</td>
-                <td>题　　目</td>
-                <td>赛事等级</td>
-                <td>名　　次</td>
-                <td><a href="" download="">下载申报书</a></td>
-                <td><a href="" download="">下载论文</a></td>
-                <td><a href="" download="">下载PPT</a></td>
-                <td><a href="" download="">下载证书</a></td>
-                <td><button class="btn btn-default">编辑</button></td>
-                <td><button class="btn btn-default">删除</button></td>
-            </tr>
-            <tr class="fontSize">
-                <td>赛事名称</td>
-                <td>2017-05-02<br>15:34:15</td>
-                <td>队伍名称</td>
-                <td>题　　目</td>
-                <td>赛事等级</td>
-                <td>名　　次</td>
-                <td><a href="" download="">下载申报书</a></td>
-                <td><a href="" download="">下载论文</a></td>
-                <td><a href="" download="">下载PPT</a></td>
-                <td><a href="" download="">下载证书</a></td>
-                <td><button class="btn btn-default">编辑</button></td>
                 <td><button class="btn btn-default">删除</button></td>
             </tr>
         </table>

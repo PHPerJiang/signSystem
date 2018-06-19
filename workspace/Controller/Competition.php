@@ -48,7 +48,7 @@ class Competition{
         $stmt=$pdo->prepare($sql);
         $arr=[
             'name'=>addslashes($data['competitionName']),
-            'time'=>isset($data['time'])?strtotime($data['time']):0,
+            'time'=>isset($data['competitionTime'])?strtotime($data['competitionTime']):0,
             'teamname'=>addslashes($data['competitionTeam']),
             'checkteam'=>isset($data['checkteam'])?1:0,
             'title'=>addslashes($data['title']),
