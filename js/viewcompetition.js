@@ -8,4 +8,19 @@ $(document).ready(function(){
     $('#addcompetition').click(function(){
         window.location.href="index.php?c=competition&m=add";
     });
+    $("#del").click(function(){
+    	var id =$("#del-id").val();
+    	$.ajax({
+    		url:'index.php?c=competition&m=del',
+    		data:{"id":id},
+    		success:function(res){
+    			if(res.status==1){
+    				window.location.reload();
+    			}
+    		},
+    		cache:false,
+    		dataType:'json',
+    		type:'get',
+    	});
+    });
 });

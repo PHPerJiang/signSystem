@@ -14,6 +14,7 @@ class View {
             self::$obj->right_delimiter='}';
             self::$obj->template_dir='html';
             self::$obj->compile_dir='data/template_c';
+            //self::$obj->caching=false;
             return self::$obj;
         }
     }

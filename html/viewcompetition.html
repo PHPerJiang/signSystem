@@ -36,16 +36,20 @@
                 <td>证　　书</td>
                 <td>操　　作</td>
             </tr>
+            {foreach from=$data key=keys item=values}
             <tr class="fontSize">
-                <td>赛事名称</td>
-                <td>2017-05-02<br>15:34:15</td>
-                <td>队伍名称</td>
-                <td>题　　目</td>
-                <td>赛事等级</td>
-                <td>名　　次</td>
-                <td><a href="" download="">下载证书</a></td>
-                <td><button class="btn btn-default">删除</button></td>
+                <td>{$values.name}</td>
+                <td>{$values.time}</td>
+                <td>{$values.teamname}</td>
+                <td>{$values.title}</td>
+                <td>{$values.grade}</td>
+                <td>{$values.top}</td>
+                <td><a href="{$values.certificate}" download="">下载证书</a></td>
+                <td><input type="submit" value="删除" class="btn btn-default" id="del"/>
+                	<input type="hidden" id="del-id" value="{$values.id}"/>
+                </td>
             </tr>
+            {/foreach}
         </table>
     </div><!--.tableDiv end-->
     <!-- <div class="container xsmall">

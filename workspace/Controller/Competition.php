@@ -1,6 +1,7 @@
 <?php
 header('content-type:text/html;charset=utf-8');
 require_once 'common/Db.php';
+require_once 'common/common.php';
 class Competition{
     /**
      * 竞赛记录首页
@@ -9,6 +10,16 @@ class Competition{
         if(!$_SESSION['userInfo']){
             header('location:index.php?c=login&m=index');
         }
+        $pdo=DB::getInstance();
+        $sql='select * from competition';
+        $stmt=$pdo->query($sql);
+        $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($data as $key =>$value){
+            //$data[$key]['certificate']=$_SERVER['HTTP_HOST'].$value['certificate'];
+            $data[$key]['time']=empty($value['time'])?'':date('Y-m-d',$value['time']);
+        }
+        //var_dump($data);exit;
+        View::assign(array('data'=>$data));
         View::display('viewcompetition.html');
         
     }
@@ -31,11 +42,12 @@ class Competition{
         //初步校验表单数据
         if(($res=$this->checkInfo($data))!=1){
             $this->direct("$res");
+            return false;
         }
         //验证上传文件数据
         if (!empty($file['fileField']['size'][0])){
-            $fileName=$_SERVER['DOCUMENT_ROOT'].'/signSystem/uploads/'.md5($_FILES['fileField']['name'][0].time()).'.jpg';
-            if(!move_uploaded_file($file['fileField']['tmp_name'][0],$fileName)){
+            $fileName='/signSystem/uploads/'.md5($_FILES['fileField']['name'][0].time()).'.jpg';
+            if(!move_uploaded_file($file['fileField']['tmp_name'][0],$_SERVER['DOCUMENT_ROOT'].$fileName)){
                 $this->direct('文件上传失败');
             }
         }else {
@@ -46,16 +58,18 @@ class Competition{
         $sql='insert into competition value (null,:name,:time,:teamname,
 :checkteam,:title,:grade,:top,:certificate)';
         $stmt=$pdo->prepare($sql);
+        //var_dump($data);
         $arr=[
             'name'=>addslashes($data['competitionName']),
-            'time'=>isset($data['competitionTime'])?strtotime($data['competitionTime']):0,
+            'time'=>empty($data['competitionTime'])?0:strtotime($data['competitionTime']),
             'teamname'=>addslashes($data['competitionTeam']),
-            'checkteam'=>isset($data['checkteam'])?1:0,
+            'checkteam'=>isset($data['checkTeam'])?1:0,
             'title'=>addslashes($data['title']),
             'grade'=>addslashes($data['grade']),
             'top'=>addslashes($data['top']),
             'certificate'=>$fileName,
         ];
+        //var_dump($arr);exit;
         $stmt->execute($arr);
         if (($row=$stmt->rowCount())>0){
             $this->direct('上传成功');
@@ -84,6 +98,14 @@ class Competition{
             return $mes;
         }
         return $mes;
+    }
+    public function del(){
+       $id=intval($_GET['id']);
+       $pdo=DB::getInstance();
+       $sql='delete from competition where id=:id';
+       $stmt=$pdo->prepare($sql);
+       $stmt->execute(array('id'=>$id));
+       show(1);
     }
     /**
      * 信息提示及页面跳转
