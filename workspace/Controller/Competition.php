@@ -7,18 +7,18 @@ class Competition{
      * 竞赛记录首页
      */
     public function view(){
+        /*权限验证  */
         if(!$_SESSION['userInfo']){
             header('location:index.php?c=login&m=index');
         }
+        /*数据库连接  */
         $pdo=DB::getInstance();
         $sql='select * from competition';
         $stmt=$pdo->query($sql);
         $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($data as $key =>$value){
-            //$data[$key]['certificate']=$_SERVER['HTTP_HOST'].$value['certificate'];
             $data[$key]['time']=empty($value['time'])?'':date('Y-m-d',$value['time']);
         }
-        //var_dump($data);exit;
         View::assign(array('data'=>$data));
         View::display('viewcompetition.html');
         
@@ -58,7 +58,7 @@ class Competition{
         $sql='insert into competition value (null,:name,:time,:teamname,
 :checkteam,:title,:grade,:top,:certificate)';
         $stmt=$pdo->prepare($sql);
-        //var_dump($data);
+        /*拼装数组  */
         $arr=[
             'name'=>addslashes($data['competitionName']),
             'time'=>empty($data['competitionTime'])?0:strtotime($data['competitionTime']),
@@ -69,7 +69,6 @@ class Competition{
             'top'=>addslashes($data['top']),
             'certificate'=>$fileName,
         ];
-        //var_dump($arr);exit;
         $stmt->execute($arr);
         if (($row=$stmt->rowCount())>0){
             $this->direct('上传成功');
@@ -99,6 +98,9 @@ class Competition{
         }
         return $mes;
     }
+    /**
+     * 删除竞赛记录
+     */
     public function del(){
        $id=intval($_GET['id']);
        $pdo=DB::getInstance();
