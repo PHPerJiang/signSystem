@@ -10,12 +10,14 @@ $(document).ready(function(){
     });
     $("#del").click(function(){
     	var id =$("#del-id").val();
+    	//声明全局变量，防止闭包问题
+    	var $tr =$(this).parent().parent();
     	$.ajax({
     		url:'index.php?c=competition&m=del',
     		data:{"id":id},
     		success:function(res){
     			if(res.status==1){
-    				window.location.reload();
+    				$tr.remove();
     			}
     		},
     		cache:false,
